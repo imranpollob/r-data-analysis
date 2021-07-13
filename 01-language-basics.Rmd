@@ -1,0 +1,207 @@
+---
+title: "01-language-basics"
+output: html_notebook
+---
+
+## Markdown Basics
+
+Try executing a code chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file
+
+## Language Basics
+
+### Assignment operators
+
+R have 3 different assignment operators. I have seen using `<-` operator the most on internet but my personal preference is to use `=` operator. The last operator is rarely used.
+
+```{r}
+x <- 10
+x = 10
+10 -> x
+```
+
+### Print
+
+You can use the `print` function to print a value explicitly otherwise calling the variable also prints its value implicitly.
+
+```{r}
+print(x)
+x
+```
+
+### Variables
+
+There are several veriable types in R
+
+```{r}
+b = TRUE
+i = 123L
+n = 12.34
+s = "Imran Pollob"
+b
+i
+n
+s
+```
+
+
+### Function
+
+```{r}
+foo = function(x) {
+  x + 1
+}
+
+foo(2)
+```
+
+### Vector
+
+```{r}
+v = c(1, 2, 3)
+v
+```
+
+### Sequence
+
+```{r}
+sequence = 1:10
+sequence
+```
+
+### Matrix
+
+```{r}
+m = matrix(data=1:6, nrow=2, ncol=3)
+m
+```
+
+### Array
+
+```{r}
+a = array(data=1:8, dim=c(2, 2, 2))
+a
+```
+
+### List
+
+```{r}
+l = list(TRUE, 1, 12.34, "ABc")
+l
+```
+
+### Factor
+
+```{r}
+f = factor(c('boy', 'girl', 'boy', 'boy', 'girl'))
+f
+levels(f)
+unclass(f)
+```
+
+### Data Frame
+
+```{r}
+df = data.frame(
+  name = c('Boy', 'Girl', 'Young'),
+  age= c(5, 12, 19),
+  isAdult = c(FALSE, FALSE, TRUE)
+)
+
+df
+```
+
+```{r}
+df[1, 2]
+```
+
+```{r}
+df[1, ]
+```
+
+```{r}
+df[ , 2]
+```
+
+```{r}
+df[["age"]]
+```
+
+```{r}
+df$age
+```
+
+```{r}
+df[c(1, 2), ]
+```
+
+```{r}
+df[1:2, ]
+```
+
+```{r}
+df[c(TRUE, TRUE, FALSE), ]
+```
+```{r}
+df[df$isAdult == TRUE, ]
+```
+
+```{r}
+df[df$age < 18, ]
+```
+
+```{r}
+df[df$name %in% 'Boy', ]
+```
+
+```{r}
+df[df$name %in% c('Boy', 'Girl'), ]
+```
+
+### Vector Operation
+
+```{r}
+c(1, 2, 3) + c(1, 1, 1)
+```
+
+### Named vs Ordered Arguments
+
+```{r}
+m <- matrix(data = 1:6, nrow = 2, ncol = 3)
+n <- matrix(1:6, 2, 3) 
+m == n
+identical(m, n)
+```
+
+### Installing Packages
+
+```{r}
+install.packages('rmsfact')
+```
+
+### Importing package
+
+```{r}
+library(rmsfact)
+```
+
+
+
+### Remove package
+
+```{r}
+remove.packages('rmsfact')
+```
+
+
+
+
+
+
+
+
+
+
